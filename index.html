@@ -13,6 +13,16 @@
 
     <title>DON-PHILIP | Creative & Technology Portfolio</title>
 
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        if (t === "light") {
+          document.querySelector('meta[name="theme-color"]').setAttribute("content", "#f3f6ef");
+        }
+      } catch (e) {}
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>

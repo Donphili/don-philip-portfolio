@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const projects = [
@@ -31,6 +31,44 @@ const projects = [
     type: "design",
     visual: "culture",
     tags: ["Advertising", "Creative Design", "Layout"],
+  },
+];
+
+// ---------------------------------------------------------------
+// CONTACT DETAILS - edit these in one place
+// ---------------------------------------------------------------
+const contact = {
+  email: "donphilip65@yahoo.com",
+  whatsappNigeria: { label: "+234 803 957 3143", link: "https://wa.me/2348039573143" },
+  whatsappKuwait: { label: "+965 9921 4970", link: "https://wa.me/96599214970" },
+};
+
+// ---------------------------------------------------------------
+// WEB PROJECTS
+// When you buy a domain for a project, paste it into `url`
+// (for example "https://biztrack.app"). While `url` is empty the
+// card shows "Live link coming soon" instead of a button.
+// ---------------------------------------------------------------
+const webProjects = [
+  {
+    number: "01",
+    category: "BUSINESS TOOL",
+    title: "BizTrack",
+    description:
+      "A small business manager dashboard for tracking goods, products and stock history in one place.",
+    art: "art-biztrack",
+    tags: ["Dashboard", "Inventory", "Business"],
+    url: "",
+  },
+  {
+    number: "02",
+    category: "WEBSITE",
+    title: "God's Lifting School",
+    description:
+      "A responsive website for God's Lifting School with a mobile-friendly dashboard and navigation.",
+    art: "art-gls",
+    tags: ["Website", "Dashboard", "Responsive"],
+    url: "",
   },
 ];
 
@@ -98,10 +136,49 @@ function TerminalIcon() {
   );
 }
 
+function SunIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+    </svg>
+  );
+}
+
+function getInitialTheme() {
+  try {
+    const saved = localStorage.getItem("theme");
+    return saved === "light" ? "light" : "dark";
+  } catch {
+    return "dark";
+  }
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(getInitialTheme);
 
   const closeMenu = () => setMenuOpen(false);
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch {
+      /* storage unavailable - ignore */
+    }
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", theme === "light" ? "#f3f6ef" : "#080b09");
+  }, [theme]);
 
   return (
     <div className="site-shell">
@@ -118,15 +195,6 @@ function App() {
           </span>
         </a>
 
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? "✕" : "☰"}
-        </button>
-
         <nav className={menuOpen ? "navigation open" : "navigation"}>
           <a href="#home" onClick={closeMenu}>Home</a>
           <a href="#about" onClick={closeMenu}>About</a>
@@ -137,6 +205,26 @@ function App() {
             Let's Talk <span>↗</span>
           </a>
         </nav>
+
+        <div className="header-actions">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            title={theme === "dark" ? "Light mode" : "Dark mode"}
+          >
+            {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+          </button>
+
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation"
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
+        </div>
       </header>
 
       <main>
@@ -443,6 +531,55 @@ function App() {
                 </div>
               </div>
             </div>
+
+            <div className="web-projects" id="projects">
+              <div className="section-heading">
+                <p className="eyebrow">WEB PROJECTS</p>
+                <h3 className="web-projects-title">
+                  Things I've <span className="green-text">built.</span>
+                </h3>
+              </div>
+
+              <div className="web-project-grid">
+                {webProjects.map((project) => (
+                  <article className="project-card" key={project.number}>
+                    <div className={`project-art ${project.art}`}>
+                      <span className="project-number">{project.number}</span>
+                      <div className="project-art-inner">
+                        <span className="art-kicker">WEB PROJECT</span>
+                        <strong>{project.title}</strong>
+                      </div>
+                      <span className="concept-label">BUILT BY DON-PHILIP</span>
+                    </div>
+
+                    <div className="project-info">
+                      <span className="project-category">{project.category}</span>
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                      <div className="tag-list">
+                        {project.tags.map((tag) => (
+                          <span key={tag}>{tag}</span>
+                        ))}
+                      </div>
+                      {project.url ? (
+                        <a
+                          className="project-link"
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit live site <span>↗</span>
+                        </a>
+                      ) : (
+                        <span className="project-link project-link-soon">
+                          Live link coming soon
+                        </span>
+                      )}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -544,13 +681,33 @@ function App() {
               Interested in design, software or cybersecurity conversations?
               I'd be glad to connect.
             </p>
-            <a
-              className="button button-primary"
-              href="mailto:your-email@example.com"
-            >
-              Get in Touch <span>↗</span>
-            </a>
-            <small>Replace the email address with your real email before publishing.</small>
+            <div className="contact-actions">
+              <a
+                className="button button-primary"
+                href={`mailto:${contact.email}`}
+              >
+                Email Me <span>↗</span>
+              </a>
+              <a
+                className="button button-outline"
+                href={contact.whatsappNigeria.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp (Nigeria) <span>↗</span>
+              </a>
+              <a
+                className="button button-outline"
+                href={contact.whatsappKuwait.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp (Kuwait) <span>↗</span>
+              </a>
+            </div>
+            <small>
+              {contact.email} · {contact.whatsappNigeria.label} · {contact.whatsappKuwait.label}
+            </small>
           </div>
         </section>
       </main>
