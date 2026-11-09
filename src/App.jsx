@@ -1,36 +1,42 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+// ---------------------------------------------------------------
+// DESIGN WORK - images and PDFs live in /public/work
+// ---------------------------------------------------------------
 const projects = [
   {
     number: "01",
     category: "BRAND IDENTITY",
     title: "TerraWeave",
     description:
-      "A personal brand identity concept exploring sustainable African fashion, culture and contemporary design.",
-    type: "design",
-    visual: "terra",
+      "A sustainable African fashion brand concept with a full identity toolkit: logo, colour palette, typography, stationery and signage.",
+    image: "/work/terra-card.webp",
+    alt: "TerraWeave logo with the tagline Rooted in Africa. Woven for Tomorrow.",
+    pdf: "/work/terraweave-brand-toolkit.pdf",
     tags: ["Branding", "Typography", "Visual Identity"],
   },
   {
     number: "02",
-    category: "CREATIVE CAMPAIGN",
-    title: "KWETU",
+    category: "LOGO · POSTER · SOCIAL",
+    title: "DON'S LAB",
     description:
-      "A personal creative concept celebrating African heritage through bold visual storytelling.",
-    type: "design",
-    visual: "kwetu",
-    tags: ["Campaign", "Culture", "Art Direction"],
+      "A cybersecurity learning lab brand: a shield logo, a phishing-awareness poster and a social post designed as one consistent system.",
+    image: "/work/dons-lab-card.webp",
+    alt: "DON'S LAB shield logo with a phishing awareness poster and a password safety social post.",
+    pdf: "/work/dons-lab-ai-assisted-design.pdf",
+    tags: ["Logo Design", "Poster", "Social Media"],
   },
   {
     number: "03",
-    category: "ADVERTISING CONCEPT",
-    title: "Visual Culture",
+    category: "FINTECH BRAND",
+    title: "Ajo",
     description:
-      "An advertising design concept focused on strong composition, visual communication and impact.",
-    type: "design",
-    visual: "culture",
-    tags: ["Advertising", "Creative Design", "Layout"],
+      "A digital savings-circle platform for West Africa, with research, brand strategy, logo, pattern system and applications.",
+    image: "/work/ajo-card.webp",
+    alt: "Ajo brand identity cover with the ajo logotype and a ring of dots around a gold coin.",
+    pdf: "/work/ajo-brand-identity.pdf",
+    tags: ["Brand Strategy", "Logo", "Applications"],
   },
 ];
 
@@ -41,6 +47,12 @@ const contact = {
   email: "donphilip65@yahoo.com",
   whatsappNigeria: { label: "+234 803 957 3143", link: "https://wa.me/2348039573143" },
   whatsappKuwait: { label: "+965 9921 4970", link: "https://wa.me/96599214970" },
+};
+
+const profileLinks = {
+  linkedin: "https://www.linkedin.com/in/onyejekwe-philip-emeka-18700226a",
+  github: "https://github.com/Donphili",
+  cv: "https://drive.google.com/file/d/1jcuT9sH-U1xiyplXfERKcoJEcInwgNq8/view?usp=drivesdk",
 };
 
 // ---------------------------------------------------------------
@@ -264,6 +276,14 @@ function App() {
               <a className="button button-outline" href="#about">
                 Discover My Story
               </a>
+              <a
+                className="button button-outline"
+                href={profileLinks.cv}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View CV <span>↗</span>
+              </a>
             </div>
 
             <div className="hero-numbers">
@@ -413,40 +433,23 @@ function App() {
           </div>
 
           <p className="section-intro">
-            A selection of personal creative concepts exploring brand
-            identity, advertising and visual storytelling.
+            Personal brand identity projects, each with a full case study
+            covering research, strategy, logo, colour, typography and
+            real-world applications.
           </p>
 
           <div className="project-grid">
             {projects.map((project) => (
               <article className="project-card" key={project.number}>
-                <div className={`project-art ${project.visual}`}>
-                  <span className="project-number">{project.number}</span>
-                  <div className="project-art-inner">
-                    {project.visual === "terra" && (
-                      <>
-                        <span className="art-kicker">NATURE / FORM / FUTURE</span>
-                        <strong>TERRA<br />WEAVE</strong>
-                        <span className="art-circle" />
-                      </>
-                    )}
-                    {project.visual === "kwetu" && (
-                      <>
-                        <span className="art-kicker">ROOTED IN CULTURE</span>
-                        <strong>KWETU</strong>
-                        <span className="kwetu-shape">✳</span>
-                      </>
-                    )}
-                    {project.visual === "culture" && (
-                      <>
-                        <span className="art-kicker">DESIGN / CULTURE / IMPACT</span>
-                        <strong>VISUAL<br />CULTURE</strong>
-                        <span className="culture-shape">V</span>
-                      </>
-                    )}
-                  </div>
-                  <span className="concept-label">PERSONAL CONCEPT</span>
-                </div>
+                <a
+                  className="project-art project-art-image"
+                  href={project.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open the ${project.title} case study (PDF)`}
+                >
+                  <img src={project.image} alt={project.alt} loading="lazy" />
+                </a>
 
                 <div className="project-info">
                   <span className="project-category">{project.category}</span>
@@ -457,6 +460,14 @@ function App() {
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
+                  <a
+                    className="project-link"
+                    href={project.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View case study (PDF) <span>↗</span>
+                  </a>
                 </div>
               </article>
             ))}
@@ -705,6 +716,11 @@ function App() {
                 WhatsApp (Kuwait) <span>↗</span>
               </a>
             </div>
+            <div className="contact-links">
+              <a href={profileLinks.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href={profileLinks.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href={profileLinks.cv} target="_blank" rel="noopener noreferrer">CV</a>
+            </div>
             <small>
               {contact.email} · {contact.whatsappNigeria.label} · {contact.whatsappKuwait.label}
             </small>
@@ -718,6 +734,11 @@ function App() {
           DON-PHILIP
         </a>
         <p>Design with Purpose. Create with Impact.</p>
+        <div className="footer-links">
+          <a href={profileLinks.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href={profileLinks.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href={profileLinks.cv} target="_blank" rel="noopener noreferrer">CV</a>
+        </div>
         <span>© 2026 DON-PHILIP. Designed and developed by Onyejekwe Philip Emeka.</span>
       </footer>
     </div>
