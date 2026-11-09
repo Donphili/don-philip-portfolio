@@ -84,6 +84,48 @@ const webProjects = [
   },
 ];
 
+// ---------------------------------------------------------------
+// CERTIFICATIONS - files live in /public/certificates
+// ---------------------------------------------------------------
+const certificates = [
+  {
+    id: "alx-cyber",
+    issuer: "ALX · CYBERSECURITY",
+    title: "ALX Cybersecurity",
+    description:
+      "A 13-week ALX programme in cybersecurity, completed with a certificate of completion.",
+    issued: "Issued 28 January 2026",
+    image: "/certificates/alx-cybersecurity-thumb.webp",
+    alt: "ALX Cybersecurity certificate of completion awarded to Philip Emeka Onyejekwe.",
+    file: "/certificates/alx-cybersecurity-certificate.png",
+    verify: "https://savanna.alxafrica.com/certificates/GXPm5NBchR",
+  },
+  {
+    id: "cisco-nss",
+    issuer: "CISCO NETWORKING ACADEMY",
+    title: "Network Support and Security",
+    description:
+      "Troubleshooting and help desk practices, common endpoint threats and attacks, and configuring secure user access on a network.",
+    issued: "Issued 16 August 2024",
+    image: "/certificates/cisco-nss-thumb.webp",
+    alt: "Cisco Networking Academy certificate for the Network Support and Security course.",
+    file: "/certificates/cisco-network-support-and-security.pdf",
+    verify: "https://www.credly.com/badges/a6daf944-bee3-40de-a071-3cb83c307cd1",
+  },
+  {
+    id: "cisco-ctm",
+    issuer: "CISCO NETWORKING ACADEMY",
+    title: "Cyber Threat Management",
+    description:
+      "Vulnerability assessment, risk management, incident response, disaster recovery and the basics of forensic investigation.",
+    issued: "Issued 16 August 2024",
+    image: "/certificates/cisco-ctm-thumb.webp",
+    alt: "Cisco Networking Academy certificate for the Cyber Threat Management course.",
+    file: "/certificates/cisco-cyber-threat-management.pdf",
+    verify: "https://www.credly.com/badges/6c37bf23-b76e-461e-b6f5-6a25709f004c",
+  },
+];
+
 const technologies = [
   { name: "JavaScript", mark: "JS", className: "javascript" },
   { name: "Python", mark: "Py", className: "python" },
@@ -684,6 +726,53 @@ function App() {
                 <span>03 / SECURITY</span>
                 <h3>Cisco Academy</h3>
                 <p>Cybersecurity and ethical hacking studies</p>
+              </div>
+            </div>
+
+            <div className="cert-block" id="certifications">
+              <p className="eyebrow">CERTIFICATIONS</p>
+              <h3 className="web-projects-title">
+                Learning you can <span className="green-text">verify.</span>
+              </h3>
+
+              <div className="cert-grid">
+                {certificates.map((cert) => (
+                  <article className="project-card" key={cert.id}>
+                    <a
+                      className="project-art project-art-image"
+                      href={cert.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open the ${cert.title} certificate`}
+                    >
+                      <img src={cert.image} alt={cert.alt} loading="lazy" />
+                    </a>
+                    <div className="project-info">
+                      <span className="project-category">{cert.issuer}</span>
+                      <h3>{cert.title}</h3>
+                      <p>{cert.description}</p>
+                      <span className="cert-date">{cert.issued}</span>
+                      <div className="cert-actions">
+                        <a
+                          className="project-link"
+                          href={cert.file}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View certificate <span>↗</span>
+                        </a>
+                        <a
+                          className="project-link"
+                          href={cert.verify}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Verify <span>↗</span>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </div>

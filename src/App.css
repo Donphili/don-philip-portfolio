@@ -1200,6 +1200,52 @@ main,
   gap: 22px;
 }
 
+/* ---------- CERTIFICATIONS ---------- */
+.cert-block {
+  margin-top: 85px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 26px;
+}
+
+.cert-grid .project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-grid .project-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.cert-grid .cert-actions {
+  margin-top: auto;
+}
+
+.cert-date {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.cert-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cert-actions .project-link {
+  margin-top: 16px;
+  padding: 10px 13px;
+}
+
 /* ---------- WEB PROJECTS ---------- */
 .web-projects {
   margin-top: 95px;
@@ -1404,7 +1450,8 @@ a.project-link:hover {
   }
 
   .project-grid,
-  .web-project-grid {
+  .web-project-grid,
+  .cert-grid {
     grid-template-columns: 1fr;
   }
 
