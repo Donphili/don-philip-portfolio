@@ -52,7 +52,7 @@ const contact = {
 const profileLinks = {
   linkedin: "https://www.linkedin.com/in/onyejekwe-philip-emeka-18700226a",
   github: "https://github.com/Donphili",
-  cv: "https://drive.google.com/file/d/1jcuT9sH-U1xiyplXfERKcoJEcInwgNq8/view?usp=drivesdk",
+  cv: "/Onyejekwe_Philip_Emeka_CV.pdf",
 };
 
 // ---------------------------------------------------------------
