@@ -89,6 +89,18 @@ const webProjects = [
 // ---------------------------------------------------------------
 const certificates = [
   {
+    id: "alx-se",
+    issuer: "ALX · SOFTWARE ENGINEERING",
+    title: "ALX Software Engineering",
+    description:
+      "A 12-month ALX Software Engineering programme with a specialization in back-end development.",
+    issued: "Issued 15 March 2024",
+    image: "/certificates/alx-software-engineering-thumb.webp",
+    alt: "ALX Software Engineering certificate of completion with a back-end specialization, awarded to Philip Emeka Onyejekwe.",
+    file: "/certificates/alx-software-engineering-certificate.jpg",
+    verify: "https://savanna.alxafrica.com/certificates/B9zSFfNpe5",
+  },
+  {
     id: "alx-cyber",
     issuer: "ALX · CYBERSECURITY",
     title: "ALX Cybersecurity",
