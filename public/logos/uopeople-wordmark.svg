@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 64" width="250" height="64" role="img" aria-label="University of the People">
+  <g transform="translate(4 8)">
+    <path d="M24 2 L46 12 L24 22 L2 12 Z" fill="#12305a"/>
+    <path d="M11 17 V27 C11 32 17 35 24 35 C31 35 37 32 37 27 V17 L24 23 Z" fill="#12305a"/>
+    <path d="M46 12 V28" stroke="#e8742c" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="46" cy="30" r="3" fill="#e8742c"/>
+  </g>
+  <text x="62" y="36" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#12305a" letter-spacing="-0.5">UoPeople</text>
+  <text x="63" y="53" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#5b6b82" letter-spacing="2">UNIVERSITY OF THE PEOPLE</text>
+</svg>

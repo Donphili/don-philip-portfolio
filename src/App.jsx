@@ -725,16 +725,25 @@ function App() {
 
             <div className="education-grid">
               <div className="education-card">
+                <div className="edu-logo">
+                  <img src="/logos/uopeople-wordmark.svg" alt="University of the People" />
+                </div>
                 <span>01 / UNIVERSITY</span>
                 <h3>University of the People</h3>
                 <p>Computer Science student</p>
               </div>
               <div className="education-card">
+                <div className="edu-logo">
+                  <img src="/logos/alx-logo.png" alt="ALX" />
+                </div>
                 <span>02 / SOFTWARE</span>
                 <h3>ALX Africa</h3>
                 <p>Certified Backend Software Engineer</p>
               </div>
               <div className="education-card">
+                <div className="edu-logo">
+                  <img src="/logos/cisco-networking-academy-logo.png" alt="Cisco Networking Academy" />
+                </div>
                 <span>03 / SECURITY</span>
                 <h3>Cisco Academy</h3>
                 <p>Cybersecurity and ethical hacking studies</p>

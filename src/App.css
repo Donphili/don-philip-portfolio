@@ -1200,6 +1200,26 @@ main,
   gap: 22px;
 }
 
+/* ---------- INSTITUTION LOGOS ---------- */
+.edu-logo {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  height: 52px;
+  margin-bottom: 20px;
+  padding: 0 16px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 32, 22, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.edu-logo img {
+  display: block;
+  width: auto;
+  height: 30px;
+}
+
 /* ---------- CERTIFICATIONS ---------- */
 .cert-block {
   margin-top: 85px;
