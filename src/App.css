@@ -952,32 +952,32 @@ main,
   display: grid;
   place-items: center;
   overflow: hidden;
-  border: 1px solid rgba(0, 255, 142, 0.16);
+  border: 1px solid rgba(0, 212, 255, 0.22);
   border-radius: 15px;
   background:
-    linear-gradient(rgba(0, 255, 142, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 142, 0.035) 1px, transparent 1px),
-    radial-gradient(circle, #173324, #080d0a 70%);
+    linear-gradient(rgba(0, 212, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.045) 1px, transparent 1px),
+    radial-gradient(circle, #112543, #060a12 72%);
   background-size: 25px 25px, 25px 25px, auto;
 }
 
 .cyber-ring {
   position: absolute;
-  border: 1px solid rgba(0, 255, 142, 0.22);
+  border: 1px solid rgba(0, 212, 255, 0.25);
   border-radius: 50%;
 }
 
 .ring-one {
   width: 270px;
   height: 270px;
-  box-shadow: 0 0 40px rgba(0, 255, 142, 0.08);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
 }
 
 .ring-two {
   width: 340px;
   height: 190px;
   transform: rotate(-40deg);
-  border-color: rgba(182, 255, 53, 0.2);
+  border-color: rgba(0, 212, 255, 0.18);
 }
 
 .cyber-shield {
@@ -986,18 +986,31 @@ main,
   filter: drop-shadow(0 0 20px rgba(182, 255, 53, 0.4));
 }
 
+.cyber-logo {
+  position: relative;
+  z-index: 1;
+  width: 190px;
+  height: auto;
+  filter: drop-shadow(0 0 26px rgba(0, 212, 255, 0.35));
+}
+
+.cyber-brand-link {
+  display: inline-block;
+  margin-top: 22px;
+}
+
 .cyber-terminal {
   position: absolute;
   right: 35px;
   bottom: 30px;
   width: 70px;
-  color: #50eaa4;
-  filter: drop-shadow(0 0 10px rgba(0, 255, 142, 0.3));
+  color: #00d4ff;
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.35));
 }
 
 .cyber-code {
   position: absolute;
-  color: rgba(133, 255, 178, 0.65);
+  color: rgba(0, 212, 255, 0.7);
   font-family: monospace;
   font-size: 9px;
   letter-spacing: 1px;

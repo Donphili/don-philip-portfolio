@@ -608,9 +608,11 @@ function App() {
             <div className="cyber-visual">
               <div className="cyber-ring ring-one" />
               <div className="cyber-ring ring-two" />
-              <div className="cyber-shield">
-                <ShieldIcon />
-              </div>
+              <img
+                className="cyber-logo"
+                src="/logos/shield-keyhole-cyan.svg"
+                alt="Cyan shield with a keyhole, a cybersecurity emblem"
+              />
               <div className="cyber-terminal">
                 <TerminalIcon />
               </div>
@@ -643,6 +645,15 @@ function App() {
                 <span>✳</span> Knowledge used responsibly. Testing only
                 with proper authorisation.
               </p>
+
+              <a
+                className="text-link cyber-brand-link"
+                href="/work/dons-lab-ai-assisted-design.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                See the DON'S LAB cybersecurity brand <span>↗</span>
+              </a>
             </div>
           </div>
         </section>
