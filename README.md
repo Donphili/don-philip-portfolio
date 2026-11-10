@@ -1,16 +1,73 @@
-# React + Vite
+# Don-Philip | Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Design with Purpose. Create with Impact.**
 
-Currently, two official plugins are available:
+The personal portfolio of **Onyejekwe Philip Emeka (Don-Philip)**: Full Stack Software Engineer, brand and graphic designer, and cybersecurity student. The site is built for both **employers** and **freelance clients**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🌐 **Live site:** https://don-philip-portfolio.vercel.app
+💼 **LinkedIn:** https://www.linkedin.com/in/onyejekwe-philip-emeka-18700226a
 
-## React Compiler
+## About me
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Computer Science student at the University of the People. ALX Software Engineering (Back-end) graduate, with an ALX Cybersecurity certificate and Cisco Networking Academy certificates in Network Support and Security and Cyber Threat Management.
 
-## Expanding the Oxlint configuration
+I build web apps, design brand identities, and I'm learning to think like a defender.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## What's on the site
+
+- **Selected design work:** brand identity case studies (TerraWeave, DON'S LAB, Ajo) with downloadable PDFs
+- **Software:** tech stack and web projects (BizTrack, God's Lifting School)
+- **Cybersecurity:** my approach to ethical, authorised security learning
+- **Learning journey and certifications:** with links to verify each certificate
+- **Services:** how I can help employers and clients
+- **Contact:** email, WhatsApp, LinkedIn, GitHub and CV download
+- **Light and dark mode**, remembered between visits
+- Fully responsive, with a link-preview image, search-engine tags and security headers
+
+## Built with
+
+- [React](https://react.dev/) 19 and [Vite](https://vite.dev/)
+- Plain CSS with light and dark themes
+- [Oxlint](https://oxc.rs/docs/guide/usage/linter) for code checks
+- Hosted on [Vercel](https://vercel.com/); every push to `master` redeploys automatically
+
+## Run it locally
+
+```bash
+npm install
+npm run dev       # start the development server
+npm run build     # create the production build in /dist
+npm run preview   # preview the production build
+npm run lint      # check the code
+```
+
+## Project structure
+
+```
+index.html          page title, SEO tags and link-preview tags
+vercel.json         security headers
+public/             images, PDFs, logos, certificates, robots.txt, sitemap.xml
+src/App.jsx         the page and its content
+src/App.css         all styles, including the light theme
+```
+
+## Updating the content
+
+The content lives in simple lists at the top of `src/App.jsx`. Edit the text there and push to GitHub:
+
+| List | What it controls |
+| --- | --- |
+| `projects` | Design case study cards |
+| `webProjects` | Web project cards (add a project's domain in `url` to show its live link) |
+| `certificates` | Certifications and their verify links |
+| `services` | The "How I can help" cards |
+| `contact` and `profileLinks` | Email, WhatsApp, LinkedIn, GitHub and CV links |
+
+## Notes
+
+- TerraWeave and Ajo are **fictional concept brands** created for portfolio and educational projects. No real-world impact claims are made.
+- DON'S LAB is a brand concept for a cybersecurity learning lab.
+
+## Copyright
+
+© 2026 Onyejekwe Philip Emeka (Don-Philip). All rights reserved. Please don't copy the design or content without permission.
