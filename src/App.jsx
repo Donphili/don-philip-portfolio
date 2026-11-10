@@ -138,6 +138,36 @@ const certificates = [
   },
 ];
 
+// ---------------------------------------------------------------
+// SERVICES - what you offer to employers and freelance clients
+// ---------------------------------------------------------------
+const services = [
+  {
+    index: "A / 01",
+    title: "Web development",
+    description:
+      "Responsive websites and web apps, from the front end to the server and database.",
+    tags: ["React", "Node.js", "MySQL"],
+    subject: "Web development project",
+  },
+  {
+    index: "B / 02",
+    title: "Brand & graphic design",
+    description:
+      "Logos, brand identity toolkits, posters and social media graphics with a clear, consistent look.",
+    tags: ["Logos", "Brand identity", "Social media"],
+    subject: "Design project",
+  },
+  {
+    index: "C / 03",
+    title: "Security awareness & IT support",
+    description:
+      "Cyber-safety awareness content, plus entry-level help desk and secure network support skills from my Cisco training.",
+    tags: ["Awareness", "Help desk", "Network security"],
+    subject: "Security awareness or IT support",
+  },
+];
+
 const technologies = [
   { name: "JavaScript", mark: "JS", className: "javascript" },
   { name: "Python", mark: "Py", className: "python" },
@@ -368,8 +398,11 @@ function App() {
 
               <div className="portrait-image">
                 <img
-                  src="/don-philip.png"
+                  src="/don-philip.webp"
                   alt="Portrait of Don-Philip"
+                  width="900"
+                  height="1200"
+                  fetchPriority="high"
                 />
               </div>
 
@@ -799,6 +832,62 @@ function App() {
           </div>
         </section>
 
+        {/* SERVICES */}
+        <section className="section-wrap services-section" id="services">
+          <div className="section-heading">
+            <p className="eyebrow">HOW I CAN HELP</p>
+            <h2>
+              Open to roles <span className="green-text">and projects.</span>
+            </h2>
+          </div>
+
+          <p className="section-intro">
+            Whether you're hiring or have a project in mind, here is where I
+            can help.
+          </p>
+
+          <div>
+
+            <div className="service-grid">
+              {services.map((service) => (
+                <div className="info-card service-card" key={service.title}>
+                  <span className="card-index">{service.index}</span>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <div className="tag-list">
+                    {service.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                  <a
+                    className="text-link"
+                    href={`mailto:${contact.email}?subject=${encodeURIComponent(service.subject)}`}
+                  >
+                    Discuss this <span>↗</span>
+                  </a>
+                </div>
+              ))}
+            </div>
+
+            <div className="services-cta">
+              <a
+                className="button button-primary"
+                href={`mailto:${contact.email}?subject=${encodeURIComponent("Project enquiry")}`}
+              >
+                Start a project <span>↗</span>
+              </a>
+              <a
+                className="button button-outline"
+                href={profileLinks.cv}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hiring? View my CV <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* CONTACT */}
         <section className="section-wrap contact-section" id="contact">
           <div className="contact-card">
@@ -810,8 +899,8 @@ function App() {
               <span className="green-text">Let's make it happen.</span>
             </h2>
             <p>
-              Interested in design, software or cybersecurity conversations?
-              I'd be glad to connect.
+              Hiring, or have a project in mind? I'm open to full-time roles
+              and freelance work, and I'd be glad to connect.
             </p>
             <div className="contact-actions">
               <a

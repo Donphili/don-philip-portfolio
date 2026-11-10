@@ -1220,6 +1220,48 @@ main,
   height: 30px;
 }
 
+/* ---------- SERVICES ---------- */
+.services-section {
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+}
+
+.service-card p {
+  min-height: 62px;
+}
+
+.service-card .tag-list {
+  margin-top: 18px;
+}
+
+.service-card .text-link {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.service-card .tag-list + .text-link {
+  margin-top: 24px;
+}
+
+.services-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 34px;
+}
+
 /* ---------- CERTIFICATIONS ---------- */
 .cert-block {
   margin-top: 85px;
@@ -1471,8 +1513,13 @@ a.project-link:hover {
 
   .project-grid,
   .web-project-grid,
-  .cert-grid {
+  .cert-grid,
+  .service-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-card p {
+    min-height: 0;
   }
 
   .web-projects {
