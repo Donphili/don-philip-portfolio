@@ -54,6 +54,15 @@
           "value": "same-origin"
         }
       ]
+    },
+    {
+      "source": "/Onyejekwe_Philip_Emeka_CV.pdf",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

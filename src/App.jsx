@@ -302,7 +302,7 @@ function App() {
       /* storage unavailable - ignore */
     }
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "light" ? "#f3f6ef" : "#080b09");
+    if (meta) meta.setAttribute("content", theme === "light" ? "#dce6d7" : "#080b09");
   }, [theme]);
 
   return (
