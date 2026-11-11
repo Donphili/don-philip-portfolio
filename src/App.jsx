@@ -139,32 +139,58 @@ const certificates = [
 ];
 
 // ---------------------------------------------------------------
-// SERVICES - what you offer to employers and freelance clients
+// SERVICES - the four connected areas (shown to employers and clients)
 // ---------------------------------------------------------------
 const services = [
   {
-    index: "A / 01",
-    title: "Web development",
-    description:
-      "Responsive websites and web apps, from the front end to the server and database.",
-    tags: ["React", "Node.js", "MySQL"],
-    subject: "Web development project",
+    index: "01",
+    title: "Software & Backend Development",
+    description: "Web applications built from the front end to the server and database.",
+    items: ["Backend development", "React and Node.js", "APIs and databases", "Software applications"],
+    subject: "Software development project",
   },
   {
-    index: "B / 02",
-    title: "Brand & graphic design",
-    description:
-      "Logos, brand identity toolkits, posters and social media graphics with a clear, consistent look.",
-    tags: ["Logos", "Brand identity", "Social media"],
-    subject: "Design project",
+    index: "02",
+    title: "Cybersecurity & Network Defense",
+    description: "Security learning and awareness, always in authorised environments.",
+    items: ["Ethical hacking", "Network security", "Endpoint security", "Security awareness"],
+    subject: "Cybersecurity enquiry",
   },
   {
-    index: "C / 03",
-    title: "Security awareness & IT support",
-    description:
-      "Cyber-safety awareness content, plus entry-level help desk and secure network support skills from my Cisco training.",
-    tags: ["Awareness", "Help desk", "Network security"],
-    subject: "Security awareness or IT support",
+    index: "03",
+    title: "Digital Design & Branding",
+    description: "Visual identities that look consistent across every touchpoint.",
+    items: ["Logo design", "Brand identity", "Graphic design", "Social media designs"],
+    subject: "Design and branding project",
+  },
+  {
+    index: "04",
+    title: "IT Support & Technical Solutions",
+    description: "Entry-level help desk and network support, backed by Cisco training.",
+    items: ["Computer troubleshooting", "Basic technical support", "Network configuration", "IT assistance"],
+    subject: "IT support enquiry",
+  },
+];
+
+// ---------------------------------------------------------------
+// SKILLS - grouped by the same four areas
+// ---------------------------------------------------------------
+const skillGroups = [
+  {
+    title: "Software",
+    skills: ["JavaScript", "Python", "React", "Node.js", "MySQL", "APIs", "Git & GitHub", "Linux"],
+  },
+  {
+    title: "Cybersecurity",
+    skills: ["Ethical hacking", "Network security", "Endpoint security", "Threat management", "Kali Linux", "Security awareness"],
+  },
+  {
+    title: "Design",
+    skills: ["Logo design", "Brand identity", "Poster design", "Social media design", "AI-assisted design"],
+  },
+  {
+    title: "IT support",
+    skills: ["Troubleshooting", "Help desk practices", "Network configuration", "Secure user access"],
   },
 ];
 
@@ -174,6 +200,9 @@ const technologies = [
   { name: "React", mark: "R", className: "react" },
   { name: "Node.js", mark: "N", className: "node" },
   { name: "GitHub", mark: "GH", className: "github" },
+  { name: "MySQL", mark: "My", className: "mysql" },
+  { name: "HTML & CSS", mark: "</>", className: "htmlcss" },
+  { name: "Kali Linux", mark: "K", className: "kali" },
   { name: "Linux", mark: "L", className: "linux" },
 ];
 
@@ -287,18 +316,26 @@ function App() {
           <BrandMark />
           <span>
             DON<span className="green-text">-</span>PHILIP
-            <small>CREATIVE · TECHNOLOGY · SECURITY</small>
+            <small>TECHNOLOGY · SECURITY · CREATIVITY</small>
           </span>
         </a>
 
         <nav className={menuOpen ? "navigation open" : "navigation"}>
           <a href="#home" onClick={closeMenu}>Home</a>
           <a href="#about" onClick={closeMenu}>About</a>
-          <a href="#design" onClick={closeMenu}>Design</a>
-          <a href="#software" onClick={closeMenu}>Software</a>
-          <a href="#cybersecurity" onClick={closeMenu}>Cybersecurity</a>
-          <a className="nav-contact" href="#contact" onClick={closeMenu}>
-            Let's Talk <span>↗</span>
+          <a href="#services" onClick={closeMenu}>Services</a>
+          <a href="#projects" onClick={closeMenu}>Projects</a>
+          <a href="#skills" onClick={closeMenu}>Skills</a>
+          <a href="#certifications" onClick={closeMenu}>Certifications</a>
+          <a href="#contact" onClick={closeMenu}>Contact</a>
+          <a
+            className="nav-contact"
+            href={profileLinks.cv}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+          >
+            View CV <span>↗</span>
           </a>
         </nav>
 
@@ -329,7 +366,7 @@ function App() {
           <div className="hero-copy">
             <div className="availability">
               <span className="status-dot" />
-              CREATIVE MIND. TECHNOLOGY FOCUSED.
+              TECHNOLOGY MEETS CREATIVITY.
             </div>
 
             <p className="eyebrow">WELCOME TO MY DIGITAL SPACE</p>
@@ -342,19 +379,19 @@ function App() {
             </h1>
 
             <h2>
-              Design with Purpose.
+              Building. Securing.
               <br />
-              <span>Create with Impact.</span>
+              <span>Designing.</span>
             </h2>
 
             <p className="hero-description">
-              I bring creativity and technology together through graphic
-              design, software development and cybersecurity.
-              Explore my work, interests and professional journey.
+              I'm Onyejekwe Philip Emeka, a technology professional focused
+              on software development, cybersecurity, IT solutions and
+              digital design.
             </p>
 
             <div className="hero-actions">
-              <a className="button button-primary" href="#design">
+              <a className="button button-primary" href="#projects">
                 Explore My Work <span>↗</span>
               </a>
               <a className="button button-outline" href="#about">
@@ -372,16 +409,16 @@ function App() {
 
             <div className="hero-numbers">
               <div>
-                <strong>03</strong>
-                <span>AREAS OF INTEREST</span>
+                <strong>{String(services.length).padStart(2, "0")}</strong>
+                <span>FOCUS AREAS</span>
               </div>
               <div>
-                <strong>01</strong>
-                <span>CREATIVE IDENTITY</span>
+                <strong>{String(projects.length + webProjects.length).padStart(2, "0")}</strong>
+                <span>PROJECTS</span>
               </div>
               <div>
-                <strong>∞</strong>
-                <span>ROOM TO GROW</span>
+                <strong>{String(certificates.length).padStart(2, "0")}</strong>
+                <span>CERTIFICATES</span>
               </div>
             </div>
           </div>
@@ -439,13 +476,13 @@ function App() {
 
         {/* INTRO STRIP */}
         <section className="expertise-strip">
-          <span>GRAPHIC DESIGN</span>
-          <i>✳</i>
-          <span>SOFTWARE ENGINEERING</span>
+          <span>SOFTWARE & BACKEND</span>
           <i>✳</i>
           <span>CYBERSECURITY</span>
           <i>✳</i>
-          <span>CREATIVE TECHNOLOGY</span>
+          <span>DIGITAL DESIGN</span>
+          <i>✳</i>
+          <span>IT SOLUTIONS</span>
         </section>
 
         {/* ABOUT */}
@@ -453,8 +490,8 @@ function App() {
           <div className="section-heading">
             <p className="eyebrow">01 / ABOUT ME</p>
             <h2>
-              Creativity meets
-              <span className="green-text"> technology.</span>
+              Technology meets
+              <span className="green-text"> creativity.</span>
             </h2>
           </div>
 
@@ -466,18 +503,27 @@ function App() {
               </p>
 
               <p>
-                I'm a creative and technology enthusiast interested in
-                building meaningful experiences through design, software
-                and cybersecurity. I enjoy turning ideas into visual
-                concepts, developing digital solutions and learning how
-                systems work and how to protect them.
+                I'm a technology professional focused on software
+                development, cybersecurity, IT solutions and digital design.
+                I build web applications, turn ideas into brand identities
+                and visual concepts, and enjoy understanding how systems work
+                and how to protect them.
               </p>
 
               <p>
-                I'm studying Computer Science at the University of the
-                People, I'm an ALX Africa certified backend software
-                engineer, and I've undertaken cybersecurity and ethical
-                hacking studies through Cisco Academy.
+                I'm an ALX Software Engineering graduate with a back-end
+                specialization, and I'm studying Computer Science at the
+                University of the People. On the security side, I've
+                completed ALX Cybersecurity and Cisco Networking Academy
+                courses in network support and security and cyber threat
+                management, and I practise in a Kali Linux lab, always in
+                authorised environments.
+              </p>
+
+              <p>
+                Before moving into technology I worked as a class teacher and
+                a company secretary, which taught me communication, accuracy
+                and responsibility.
               </p>
 
               <a className="text-link" href="#contact">
@@ -488,43 +534,147 @@ function App() {
             <div className="about-side">
               <div className="info-card">
                 <span className="card-index">A / 01</span>
-                <h3>Creative thinking</h3>
-                <p>Design, identity, communication and visual storytelling.</p>
-              </div>
-
-              <div className="info-card">
-                <span className="card-index">B / 02</span>
                 <h3>Technical learning</h3>
                 <p>Programming, backend development and digital systems.</p>
               </div>
 
               <div className="info-card">
-                <span className="card-index">C / 03</span>
+                <span className="card-index">B / 02</span>
                 <h3>Security mindset</h3>
                 <p>Ethical hacking, awareness and defensive security.</p>
+              </div>
+
+              <div className="info-card">
+                <span className="card-index">C / 03</span>
+                <h3>Creative thinking</h3>
+                <p>Design, identity, communication and visual storytelling.</p>
+              </div>
+
+              <div className="info-card">
+                <span className="card-index">D / 04</span>
+                <h3>Problem solving</h3>
+                <p>Troubleshooting, help desk practices and secure network support.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* DESIGN */}
-        <section className="section-wrap work-section" id="design">
+        {/* SERVICES */}
+        <section className="section-wrap services-section" id="services">
+          <div className="section-heading">
+            <p className="eyebrow">02 / SERVICES</p>
+            <h2>
+              Technology &amp; <span className="green-text">digital solutions.</span>
+            </h2>
+          </div>
+
+          <p className="section-intro">
+            One person, four connected areas. Whether you're hiring or have a
+            project in mind, here is where I can help.
+          </p>
+
+          <div className="service-grid">
+            {services.map((service) => (
+              <div className="info-card service-card" key={service.title}>
+                <span className="card-index">{service.index}</span>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <ul className="service-list">
+                  {service.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <a
+                  className="text-link"
+                  href={`mailto:${contact.email}?subject=${encodeURIComponent(service.subject)}`}
+                >
+                  Discuss this <span>↗</span>
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <div className="services-cta">
+            <a
+              className="button button-primary"
+              href={`mailto:${contact.email}?subject=${encodeURIComponent("Project enquiry")}`}
+            >
+              Start a project <span>↗</span>
+            </a>
+            <a
+              className="button button-outline"
+              href={profileLinks.cv}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hiring? View my CV <span>↗</span>
+            </a>
+          </div>
+        </section>
+
+        {/* PROJECTS */}
+        <section className="section-wrap work-section" id="projects">
           <div className="section-heading heading-row">
             <div>
-              <p className="eyebrow">02 / CREATIVE PORTFOLIO</p>
+              <p className="eyebrow">03 / PROJECTS</p>
               <h2>
-                Selected <span className="green-text">design work.</span>
+                Work you can <span className="green-text">see.</span>
               </h2>
             </div>
             <span className="section-side-note">IDEAS MADE VISIBLE / 2026</span>
           </div>
 
           <p className="section-intro">
-            Personal brand identity projects, each with a full case study
-            covering research, strategy, logo, colour, typography and
-            real-world applications.
+            Software I've built and brand identity projects with full case
+            studies. Learning labs and concept projects are labelled as such.
           </p>
 
+          <h3 className="project-group-title">
+            <span>01</span> Software &amp; web
+          </h3>
+        <div className="web-project-grid">
+          {webProjects.map((project) => (
+            <article className="project-card" key={project.number}>
+              <div className={`project-art ${project.art}`}>
+                <span className="project-number">{project.number}</span>
+                <div className="project-art-inner">
+                  <span className="art-kicker">WEB PROJECT</span>
+                  <strong>{project.title}</strong>
+                </div>
+                <span className="concept-label">BUILT BY DON-PHILIP</span>
+              </div>
+
+              <div className="project-info">
+                <span className="project-category">{project.category}</span>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="tag-list">
+                  {project.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                {project.url ? (
+                  <a
+                    className="project-link"
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit live site <span>↗</span>
+                  </a>
+                ) : (
+                  <span className="project-link project-link-soon">
+                    Live link coming soon
+                  </span>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+
+          <h3 className="project-group-title">
+            <span>02</span> Design &amp; branding
+          </h3>
           <div className="project-grid">
             {projects.map((project) => (
               <article className="project-card" key={project.number}>
@@ -560,18 +710,18 @@ function App() {
             ))}
           </div>
           <p className="concept-disclaimer">
-            These are personal design concepts created for portfolio
-            development, not commissioned client projects.
+            The brand projects are personal design concepts created for
+            portfolio development, not commissioned client projects.
           </p>
         </section>
 
-        {/* SOFTWARE */}
-        <section className="software-section" id="software">
+        {/* SKILLS */}
+        <section className="software-section" id="skills">
           <div className="section-wrap">
             <div className="section-heading">
-              <p className="eyebrow">03 / SOFTWARE ENGINEERING</p>
+              <p className="eyebrow">04 / TECHNICAL SKILLS</p>
               <h2>
-                Building with <span className="green-text">technology.</span>
+                Skills across <span className="green-text">the stack.</span>
               </h2>
             </div>
 
@@ -582,10 +732,9 @@ function App() {
                   <span className="green-text"> digital solutions.</span>
                 </p>
                 <p>
-                  My software engineering interests include backend
-                  development, programming and building useful digital
-                  experiences. I'm continuously improving through study
-                  and practical projects.
+                  I build web applications with a back-end focus, and I keep
+                  growing across security, design and IT support. These are
+                  the tools and skills I work with.
                 </p>
                 <a className="text-link" href="#contact">
                   Discuss a project <span>↗</span>
@@ -594,7 +743,7 @@ function App() {
 
               <div className="technology-panel">
                 <div className="panel-top">
-                  <span>TECH STACK / LEARNING TOOLKIT</span>
+                  <span>TECH STACK / TOOLKIT</span>
                   <span className="status-dot" />
                 </div>
 
@@ -621,8 +770,9 @@ function App() {
                     {"\n"}  mindset: <span className="code-yellow">"Keep learning"</span>,
                     {"\n"}  focus: [
                     {"\n"}    <span className="code-yellow">"Build"</span>,
-                    {"\n"}    <span className="code-yellow">"Create"</span>,
-                    {"\n"}    <span className="code-yellow">"Improve"</span>
+                    {"\n"}    <span className="code-yellow">"Secure"</span>,
+                    {"\n"}    <span className="code-yellow">"Design"</span>,
+                    {"\n"}    <span className="code-yellow">"Support"</span>
                     {"\n"}  ]
                     {"\n"}{"}"};
                   </pre>
@@ -630,53 +780,17 @@ function App() {
               </div>
             </div>
 
-            <div className="web-projects" id="projects">
-              <div className="section-heading">
-                <p className="eyebrow">WEB PROJECTS</p>
-                <h3 className="web-projects-title">
-                  Things I've <span className="green-text">built.</span>
-                </h3>
-              </div>
-
-              <div className="web-project-grid">
-                {webProjects.map((project) => (
-                  <article className="project-card" key={project.number}>
-                    <div className={`project-art ${project.art}`}>
-                      <span className="project-number">{project.number}</span>
-                      <div className="project-art-inner">
-                        <span className="art-kicker">WEB PROJECT</span>
-                        <strong>{project.title}</strong>
-                      </div>
-                      <span className="concept-label">BUILT BY DON-PHILIP</span>
-                    </div>
-
-                    <div className="project-info">
-                      <span className="project-category">{project.category}</span>
-                      <h3>{project.title}</h3>
-                      <p>{project.description}</p>
-                      <div className="tag-list">
-                        {project.tags.map((tag) => (
-                          <span key={tag}>{tag}</span>
-                        ))}
-                      </div>
-                      {project.url ? (
-                        <a
-                          className="project-link"
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Visit live site <span>↗</span>
-                        </a>
-                      ) : (
-                        <span className="project-link project-link-soon">
-                          Live link coming soon
-                        </span>
-                      )}
-                    </div>
-                  </article>
-                ))}
-              </div>
+            <div className="skill-groups">
+              {skillGroups.map((group) => (
+                <div className="skill-group" key={group.title}>
+                  <h3>{group.title}</h3>
+                  <div className="tag-list">
+                    {group.skills.map((skill) => (
+                      <span key={skill}>{skill}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -684,7 +798,7 @@ function App() {
         {/* CYBERSECURITY */}
         <section className="section-wrap cyber-section" id="cybersecurity">
           <div className="section-heading">
-            <p className="eyebrow">04 / CYBERSECURITY</p>
+            <p className="eyebrow">05 / CYBERSECURITY</p>
             <h2>
               Think like a defender.
               <span className="green-text"> Stay ethical.</span>
@@ -746,10 +860,10 @@ function App() {
         </section>
 
         {/* EDUCATION */}
-        <section className="education-section">
+        <section className="education-section" id="certifications">
           <div className="section-wrap">
             <div className="section-heading">
-              <p className="eyebrow">05 / LEARNING JOURNEY</p>
+              <p className="eyebrow">06 / CERTIFICATIONS &amp; LEARNING</p>
               <h2>
                 Always learning.
                 <span className="green-text"> Always evolving.</span>
@@ -783,7 +897,7 @@ function App() {
               </div>
             </div>
 
-            <div className="cert-block" id="certifications">
+            <div className="cert-block">
               <p className="eyebrow">CERTIFICATIONS</p>
               <h3 className="web-projects-title">
                 Learning you can <span className="green-text">verify.</span>
@@ -832,57 +946,34 @@ function App() {
           </div>
         </section>
 
-        {/* SERVICES */}
-        <section className="section-wrap services-section" id="services">
-          <div className="section-heading">
-            <p className="eyebrow">HOW I CAN HELP</p>
-            <h2>
-              Open to roles <span className="green-text">and projects.</span>
-            </h2>
-          </div>
-
-          <p className="section-intro">
-            Whether you're hiring or have a project in mind, here is where I
-            can help.
-          </p>
-
-          <div>
-
-            <div className="service-grid">
-              {services.map((service) => (
-                <div className="info-card service-card" key={service.title}>
-                  <span className="card-index">{service.index}</span>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                  <div className="tag-list">
-                    {service.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                  <a
-                    className="text-link"
-                    href={`mailto:${contact.email}?subject=${encodeURIComponent(service.subject)}`}
-                  >
-                    Discuss this <span>↗</span>
-                  </a>
-                </div>
-              ))}
+        {/* CV */}
+        <section className="section-wrap cv-section" id="cv">
+          <div className="cv-card">
+            <div className="cv-copy">
+              <p className="eyebrow">07 / CURRICULUM VITAE</p>
+              <h2>
+                My CV, <span className="green-text">one page.</span>
+              </h2>
+              <p>
+                Experience, education, certifications and skills in a single
+                document, ready for recruiters and hiring managers.
+              </p>
             </div>
-
-            <div className="services-cta">
+            <div className="cv-actions">
               <a
                 className="button button-primary"
-                href={`mailto:${contact.email}?subject=${encodeURIComponent("Project enquiry")}`}
-              >
-                Start a project <span>↗</span>
-              </a>
-              <a
-                className="button button-outline"
                 href={profileLinks.cv}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Hiring? View my CV <span>↗</span>
+                View CV <span>↗</span>
+              </a>
+              <a
+                className="button button-outline"
+                href={profileLinks.cv}
+                download="Onyejekwe_Philip_Emeka_CV.pdf"
+              >
+                Download PDF <span>↓</span>
               </a>
             </div>
           </div>
@@ -892,7 +983,7 @@ function App() {
         <section className="section-wrap contact-section" id="contact">
           <div className="contact-card">
             <div className="contact-decoration">DP</div>
-            <p className="eyebrow">06 / LET'S CONNECT</p>
+            <p className="eyebrow">08 / LET'S CONNECT</p>
             <h2>
               Have an idea?
               <br />
@@ -943,7 +1034,7 @@ function App() {
           <BrandMark />
           DON-PHILIP
         </a>
-        <p>Design with Purpose. Create with Impact.</p>
+        <p>Technology · Security · Creativity</p>
         <div className="footer-links">
           <a href={profileLinks.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href={profileLinks.github} target="_blank" rel="noopener noreferrer">GitHub</a>

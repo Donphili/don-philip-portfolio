@@ -1,8 +1,8 @@
 # Don-Philip | Personal Portfolio
 
-**Design with Purpose. Create with Impact.**
+**Building. Securing. Designing.**
 
-The personal portfolio of **Onyejekwe Philip Emeka (Don-Philip)**: Full Stack Software Engineer, brand and graphic designer, and cybersecurity student. The site is built for both **employers** and **freelance clients**.
+The technology portfolio of **Onyejekwe Philip Emeka (Don-Philip)**, a Full Stack Software Engineer working across four connected areas: software and backend development, cybersecurity, digital design and IT support. The site is built for both **employers** and **freelance clients**.
 
 🌐 **Live site:** https://don-philip-portfolio.vercel.app
 💼 **LinkedIn:** https://www.linkedin.com/in/onyejekwe-philip-emeka-18700226a
@@ -15,12 +15,13 @@ I build web apps, design brand identities, and I'm learning to think like a defe
 
 ## What's on the site
 
-- **Selected design work:** brand identity case studies (TerraWeave, DON'S LAB, Ajo) with downloadable PDFs
-- **Software:** tech stack and web projects (BizTrack, God's Lifting School)
+- **About:** professional background and education
+- **Services:** four categories (Software & Backend Development, Cybersecurity & Network Defense, Digital Design & Branding, IT Support & Technical Solutions)
+- **Projects:** web projects (BizTrack, God's Lifting School) and brand identity case studies (TerraWeave, DON'S LAB, Ajo) with PDFs
+- **Skills:** toolkit and skills grouped by area
 - **Cybersecurity:** my approach to ethical, authorised security learning
-- **Learning journey and certifications:** with links to verify each certificate
-- **Services:** how I can help employers and clients
-- **Contact:** email, WhatsApp, LinkedIn, GitHub and CV download
+- **Certifications and learning:** with links to verify each certificate
+- **CV and contact:** CV download, email, WhatsApp, LinkedIn and GitHub
 - **Light and dark mode**, remembered between visits
 - Fully responsive, with a link-preview image, search-engine tags and security headers
 
