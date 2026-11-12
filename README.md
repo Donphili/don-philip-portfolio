@@ -9,7 +9,7 @@ The technology portfolio of **Onyejekwe Philip Emeka (Don-Philip)**, a Full Stac
 
 ## About me
 
-Computer Science student at the University of the People. ALX Software Engineering (Back-end) graduate, with an ALX Cybersecurity certificate and Cisco Networking Academy certificates in Network Support and Security and Cyber Threat Management.
+Computer Science student at the University of the People. ALX Software Engineering (Back-end) and ALX Graphic Design graduate, with an ALX Cybersecurity certificate and Cisco Networking Academy certificates in Network Support and Security and Cyber Threat Management.
 
 I build web apps, design brand identities, and I'm learning to think like a defender.
 

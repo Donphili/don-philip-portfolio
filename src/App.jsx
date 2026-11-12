@@ -113,6 +113,18 @@ const certificates = [
     verify: "https://savanna.alxafrica.com/certificates/GXPm5NBchR",
   },
   {
+    id: "alx-design",
+    issuer: "ALX · GRAPHIC DESIGN",
+    title: "ALX Graphic Design",
+    description:
+      "Certificate of Achievement awarded on graduation from the ALX Graphic Design programme, after meeting all course and assessment requirements.",
+    issued: "Issued 11 November 2026",
+    image: "/certificates/alx-graphic-design-thumb.webp",
+    alt: "ALX Graphic Design certificate of achievement awarded to Philip Emeka Onyejekwe.",
+    file: "/certificates/alx-graphic-design-certificate.png",
+    verify: "https://ehub.alxafrica.com/ob3/verify-certificate/7e8dbe2d-0396-4050-9e75-0468fc39b764",
+  },
+  {
     id: "cisco-nss",
     issuer: "CISCO NETWORKING ACADEMY",
     title: "Network Support and Security",
@@ -512,7 +524,8 @@ function App() {
 
               <p>
                 I'm an ALX Software Engineering graduate with a back-end
-                specialization, and I'm studying Computer Science at the
+                specialization, I've graduated from the ALX Graphic Design
+                programme, and I'm studying Computer Science at the
                 University of the People. On the security side, I've
                 completed ALX Cybersecurity and Cisco Networking Academy
                 courses in network support and security and cyber threat
