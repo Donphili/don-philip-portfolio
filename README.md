@@ -4,7 +4,7 @@
 
 The technology portfolio of **Onyejekwe Philip Emeka (Don-Philip)**, a Full Stack Software Engineer working across four connected areas: software and backend development, cybersecurity, digital design and IT support. The site is built for both **employers** and **freelance clients**.
 
-🌐 **Live site:** https://don-philip-portfolio.vercel.app
+🌐 **Live site:** https://donphilip.dev
 💼 **LinkedIn:** https://www.linkedin.com/in/onyejekwe-philip-emeka-18700226a
 
 ## About me

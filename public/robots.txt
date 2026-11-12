@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://don-philip-portfolio.vercel.app/sitemap.xml
+Sitemap: https://donphilip.dev/sitemap.xml
